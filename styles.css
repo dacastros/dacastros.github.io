@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Suez+One&display=swap');
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: #0081C9;
+}
+
+#seleccionar-mascota {
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    center;
+    align-items:        center;
+}
+
+.titulo {
+    color: white; 
+    font-size: 48px;
+}
+
+.subtitulo{
+    color: #86E5FF; 
+    font-size: 24px;
+}
+
+.tarjetas, #botones-ataques{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    width: 200px;
+    height: 200px;
+    background: #5BC0F8;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid transparent 6px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.tarjeta-de-mokepon img{
+    width: 120px;
+}
+
+#boton-mascota{
+    font-family: 'Suez One', serif;
+    font-size: 36px;
+    border: solid #FFC93C 3px;
+    width: 300px;
+    height: 70px;
+    background: #86E5FF;
+    padding: 3px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 40px;
+    color: #0081C9;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label{
+    border: solid #FFC93C 6px;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #5BC0F8;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid transparent 3px;
+    border-radius: 30px;
+    width: 100px;
+    color:  white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+.boton-de-ataque:hover{
+    border: solid #FFC93C 3px;
+}
+
+#mensajes{
+    width: 320px;
+    font-size: 20px;
+    background: #5BC0F8;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color: white
+}
+
+#boton-reiniciar{
+    border: none;
+    font-family: 'Suez One', serif;
+    font-size: 28px;
+    border: solid #0081C9 3px;
+    width: 200px;
+    height: 70px;
+    background: #FFC93C ;
+    padding: 3px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 40px;
+    color: #0081C9;
+}
+
+.ataques{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 630px){
+    .tarjetas, #botones-ataques{
+        flex-direction: column;
+    }
+
+    .boton-de-ataque{
+        margin: 3px;
+    }
+}
