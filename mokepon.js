@@ -171,21 +171,26 @@ function secuenciaAtaque() {
         boton.addEventListener('click', (e) => {
             if (e.target.textContent === '💧 abracitos') {
                 ataqueJugador.push('Agua')
-                boton.style.background = '#0081C9'   
+                boton.style.background = 'transparent'   
+				boton.style.color = 'transparent'
 				indexAtaquesJugador = '💧 abracitos'
+				boton.disabled = true
             } else if (e.target.textContent === '🔥 rugidos') {
                 ataqueJugador.push('Fuego')
-                boton.style.background = '#0081C9'
+                boton.style.background = 'transparent'
+				boton.style.color = 'transparent'
 				indexAtaquesJugador = '🔥 rugidos'
+				boton.disabled = true;
             } else {
                 ataqueJugador.push('Tierra')
-                boton.style.background = '#0081C9'
+                boton.style.background = 'transparent'
+				boton.style.color = 'transparent'
 				indexAtaquesJugador = '🌿 ronquidos'
+				boton.disabled = true;
             }
 			ataqueAleatorioEnemigo()
         })
     })
-
 }
 
 function ataqueAleatorioEnemigo(){
