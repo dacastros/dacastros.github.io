@@ -25,6 +25,7 @@ let opcionDeMokepones
 let inputWanderschweinerin 
 let inputRicciandino
 let inputDinohiking
+let inputChiguira
 let mascotaJugador
 let mascotaEnemigo
 let ataquesMokepon
@@ -49,6 +50,7 @@ class Mokepon{
 let wanderschweinerin = new Mokepon("Wanderschweinerin", "./Wanderschweinerin.png", 5)
 let ricciandino = new Mokepon("Ricciandino", "./Ricciandino.png", 5)
 let dinohiking = new Mokepon("Dinohiking", "./Dinohiking.png", 5)
+let chiguira = new Mokepon("Chigüira", "./Chiguira.png", 5)
 
 wanderschweinerin.ataques.push(
 	{nombre:'💧 abracitos', id: 'boton-agua'},
@@ -74,7 +76,15 @@ dinohiking.ataques.push(
 	{nombre:'💧 abracitos', id: 'boton-agua'},
 )
 
-mokepones.push(wanderschweinerin, ricciandino, dinohiking)
+chiguira.ataques.push(
+	{nombre:'🌿 ronquidos', id: 'boton-tierra'},
+	{nombre:'🌿 ronquidos', id: 'boton-tierra'},
+	{nombre:'💧 abracitos', id: 'boton-agua'},
+	{nombre:'💧 abracitos', id: 'boton-agua'},
+	{nombre:'🔥 rugidos', id: 'boton-fuego'},	
+)
+
+mokepones.push(wanderschweinerin, ricciandino, dinohiking, chiguira)
 
 function iniciarJuego(){
 	
@@ -93,6 +103,7 @@ function iniciarJuego(){
 		inputWanderschweinerin 	= document.getElementById("Wanderschweinerin")
 		inputRicciandino 		= document.getElementById("Ricciandino")
 		inputDinohiking 		= document.getElementById("Dinohiking")
+		inputChiguira			= document.getElementById("Chigüira")
 	})
 
 	
@@ -116,6 +127,9 @@ function seleccionarMascotaJugador (){
 	} else if (inputDinohiking.checked){
 		spanMascotaJugador.innerHTML = inputDinohiking.id
 		mascotaJugador = inputDinohiking.id
+	} else if (inputChiguira.checked){
+		spanMascotaJugador.innerHTML = inputChiguira.id
+		mascotaJugador = inputChiguira.id
 	} else {
 		alert("Selecciona una mascota")
 	}
