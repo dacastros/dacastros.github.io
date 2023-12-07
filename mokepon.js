@@ -2,6 +2,11 @@ const sectionReiniciar 		= document.getElementById("reiniciar")
 const sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
 const botonMascotaJugador 	= document.getElementById("boton-mascota")
 const botonReiniciar 		= document.getElementById("boton-reiniciar")
+const botonArriba			= document.getElementById("Arriba")
+const botonAbajo			= document.getElementById("Abajo")
+const botonIzquierda		= document.getElementById("Izquierda")
+const botonDerecha			= document.getElementById("Derecha")
+
 
 const sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
 const spanMascotaJugador		= document.getElementById("mascota-jugador")
@@ -186,9 +191,9 @@ function iniciarJuego(){
 	
 	sectionReiniciar.style.display = "none"
 
-	botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
+	botonMascotaJugador.addEventListener("touchstart", seleccionarMascotaJugador)
 
-	botonReiniciar.addEventListener("click", reiniciarJuego)
+	botonReiniciar.addEventListener("touchstart", reiniciarJuego)
 }
 
 function seleccionarMascotaJugador (){
@@ -258,7 +263,7 @@ function extraerAtaquesEnemigo(mascotaEnemigo){
 
 function secuenciaAtaque() {
     botones.forEach((boton) => {
-        boton.addEventListener('click', (e) => {
+        boton.addEventListener("touchstart", (e) => {
             if (e.target.textContent === '💧 abracitos') {
                 ataqueJugador.push('Agua')
                 boton.style.background = 'transparent'   
@@ -421,35 +426,30 @@ function detenerMovimiento(){
 }
 
 function sePresionoUnaTecla(event){
-	switch (event.key) {
-		case "ArrowUp":
-			moverArriba()
-			break
-	
-		case "ArrowDown":
-			moverAbajo()
-			break
-	
-		case "ArrowLeft":
-			moverIzquierda()
-			break
-	
-		case "ArrowRight":
-			moverDerecha()
-			break
-	
-		default:
-			break;
+	botonArriba.addEventListener("touchstart", moverArriba)
+	botonArriba.addEventListener("touchend", detenerMovimiento)
+
+	botonAbajo.addEventListener("touchstart", moverAbajo)
+	botonAbajo.addEventListener("touchend", detenerMovimiento)
+
+	botonIzquierda.addEventListener("touchstart", moverIzquierda)
+	botonIzquierda.addEventListener("touchend", detenerMovimiento)
+
+	botonDerecha.addEventListener("touchstart", moverDerecha)
+	botonDerecha.addEventListener("touchend", detenerMovimiento)
+
 	}
-}
 
 function iniciarMapa(){
 
 	intervalo = setInterval(pintarCanvas, 10)
 
-	window.addEventListener("keydown", sePresionoUnaTecla)
+	//window.addEventListener("keydown", sePresionoUnaTecla)
+	
+	window.addEventListener("touchstart", sePresionoUnaTecla)
 
-	window.addEventListener("keyup", detenerMovimiento)
+	//window.addEventListener("keyup", detenerMovimiento)
+	window.addEventListener("touchend", detenerMovimiento)
 }
 
 function obtenerObjetoMascota(){
@@ -490,6 +490,10 @@ function revisarColision(enemigo) {
 	sectionVerMapa.style.display="none"
 	seleccionarMascotaEnemigo (enemigo)
 	
+}
+
+function funcionaTouch(){
+	console.log("Funciona el touch!")
 }
 
 window.addEventListener("load", iniciarJuego)
