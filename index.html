@@ -4,12 +4,13 @@
 	<meta charset="utf-8">
 	<title>MOKEPON!</title>
 	<link rel="stylesheet" href="./styles.css"	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<section id="seleccionar-mascota">
-		<h1 class ="titulo">Mokepon!</h1>
+		<h1 class ="titulo">Matachos!</h1>
 
-		<h2 class="subtitulo">Elige a tu mascota:</h2>
+		<h2 class="subtitulo">Elige a tu matacho:</h2>
 
 		<div id="contenedor-tarjetas" class="tarjetas">
 			
@@ -18,8 +19,19 @@
 		<button id="boton-mascota">Seleccionar</button>
 	</section>
 
+	<section id="ver-mapa">
+		<h2 class ="subtitulo">Recorre el mapa con tu matachín</h2>
+		<canvas id="mapa"> </canvas>
+		<button onmouseup = "detenerMovimiento()" onmousedown = "moverArriba()">🡹</button>
+		<div>
+			<button onmouseup = "detenerMovimiento()" onmousedown = "moverIzquierda()">🡸</button>
+			<button onmouseup = "detenerMovimiento()" onmousedown = "moverAbajo()">🡻</button>
+			<button onmouseup = "detenerMovimiento()" onmousedown = "moverDerecha()">🡺</button>
+		</div>
+		</section>
+
 	<section id="seleccionar-ataque">
-		<h1 class ="titulo">Mokepon!</h1>
+		<h1 class ="titulo">Matacho!</h1>
 
 		<h2 class="subtitulo">Elige el orden de tus ataques:</h2>
 
