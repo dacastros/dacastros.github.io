@@ -128,6 +128,30 @@ input:checked + label{
     text-align: center;
 }
 
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa{
+    border: 3px solid #FFC93C;
+}
+
+#ver-mapa button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    border: solid #FFC93C 2px;
+    width: 80px;
+    height: 40px;
+    background: #86E5FF;
+    padding: 3px;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 40px;
+    color: #0081C9;
+}
+
 @media (max-width: 630px){
     .tarjetas, #botones-ataques{
         flex-direction: column;
@@ -136,4 +160,12 @@ input:checked + label{
     .boton-de-ataque{
         margin: 3px;
     }
+}
+
+@media (max-width: 360px){
+  #ver-mapa div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
